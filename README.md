@@ -57,6 +57,8 @@ daily-menu-card/
 ## License
 
 个人使用，随意修改。
+
+
 <img width="600" height="1382" alt="今日菜单_东北家宴_2026-06-21" src="https://github.com/user-attachments/assets/8f330766-4902-4f77-8c7c-5be466e3fe95" />
 <img width="600" height="1343" alt="今日菜单_东北家宴_暖调质感" src="https://github.com/user-attachments/assets/d456b967-0463-4511-b5aa-e2fb8b68cfa7" />
 
