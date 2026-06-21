@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日菜单 Today's Menu</title>
+
+<!--
+  This template is Preset A (极简白 Clean Minimal) — the validated default.
+  For Preset B (暖调质感 Warm Textured), see references/style-presets.md for
+  the full color/font/layout spec and adapt this structure: swap the palette,
+  switch to left-alignment, and add the dotted price-leader convention back
+  in (only when a price actually exists — never leave a leader trailing to
+  nothing).
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;500&family=Jost:wght@300;400&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #2A2622;            /* warm charcoal, not pure black */
+    --ink-muted: #A39A8C;
+    --font-display-cn: 'Noto Serif SC', serif;
+    --font-display-en: 'Cormorant Garamond', serif;
+    --font-label: 'Jost', 'Noto Sans SC', sans-serif;
+    --card-width: 600px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 56px 20px;
+    background: #EFEDE8;       /* just the page surround, not the card itself */
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-label);
+    color: var(--ink);
+  }
+
+  .card {
+    width: 100%;
+    max-width: var(--card-width);
+    background: var(--bg);
+    padding: 72px 48px;
+    /* 3:4-proportioned starting canvas — min-height, not a hard lock, so a
+       long meal can grow taller without clipping or squeezing. */
+    min-height: calc(var(--card-width) * 4 / 3);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+
+  /* ---------- Title block ---------- */
+
+  .menu-title-primary {
+    font-family: var(--font-display-cn);
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+
+  .menu-title-secondary {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 10px;
+  }
+
+  .menu-date {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 6px;
+  }
+
+  .title-rule {
+    width: 28px;
+    height: 1px;
+    background: var(--ink-muted);
+    margin: 28px auto;
+  }
+
+  /* ---------- Course sections ---------- */
+
+  .course { margin-bottom: 44px; }
+  .course:last-child { margin-bottom: 0; }
+
+  .course-label {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+  }
+
+  .dish { margin-bottom: 20px; }
+  .dish:last-child { margin-bottom: 0; }
+
+  .dish-name-primary {
+    font-family: var(--font-display-cn);
+    font-size: 18px;
+    letter-spacing: 0.04em;
+  }
+
+  .dish-name-secondary {
+    font-family: var(--font-display-en);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 3px;
+  }
+
+  /* Ingredient line — NOT a tasting-note sentence. List actual components,
+     comma/顿号-separated, the way real menus do it. e.g. "牛肉饼、特制酱汁、
+     生菜、芝士、酸黄瓜、芝麻面包" — not a flowery descriptive paragraph. */
+  .dish-ingredients {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .footer-mark {
+    margin-top: 48px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--ink-muted);
+  }
+
+  @media print {
+    body { padding: 0; background: white; }
+    .card { box-shadow: none; max-width: 100%; min-height: 0; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="menu-title-primary">今日菜单</div>
+    <div class="menu-title-secondary">Today's Menu</div>
+    <div class="menu-date">2026 · 06 · 21</div>
+
+    <div class="title-rule"></div>
+
+    <!-- Repeat one .course block per non-empty category.
+         Omit any category with nothing in it. -->
+
+    <div class="course">
+      <div class="course-label">主菜 Mains</div>
+
+      <div class="dish">
+        <div class="dish-name-primary">示例菜名</div>
+        <div class="dish-name-secondary">Example Dish</div>
+        <div class="dish-ingredients">食材一、食材二、食材三</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
